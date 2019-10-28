@@ -33,7 +33,7 @@ const Navigation = ({ reloadShelters }) => {
           <RefreshIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          COOLING AND HOMELESS SHELTER APP
+          COOLING CENTERS APP
         </Typography>
         
       </Toolbar>
