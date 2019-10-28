@@ -8,7 +8,8 @@ import Shelter from "./Shelter";
 
 const App = () => {
   const { latitude, longitude } = usePosition();
-  const [{ data }, refetch] = useAxios(`/.netlify/functions/getShelters?lat=${latitude}&lon=${longitude}`);
+  const type = 1; // Filter down to only cooling shelters
+  const [{ data }, refetch] = useAxios(`/.netlify/functions/getShelters?lat=${latitude}&lon=${longitude}&type=${type}`);
   const shelters = (data && data.shelters) || [];
 
   return (
