@@ -5,7 +5,7 @@ const db = pg(process.env.DB_URL);
 
 exports.handler = async (event, context) => {
   const { lat, lon, type } = event.queryStringParameters;
-  const where = type ? "WHERE shelter_type.type = ${type}" : "";
+  const where = type ? " WHERE shelter_type.type = ${type}" : "";
 
   const shelters = await db.any(
     "SELECT * FROM shelter INNER JOIN shelter_type ON shelter.id = shelter_type.shelter" +
