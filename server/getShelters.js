@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
   const shelters = await db.any(
     "SELECT * FROM shelter INNER JOIN shelter_type ON shelter.id = shelter_type.shelter" +
       where +
-      "ORDER BY coordinates <-> ST_MakePoint(${lat}, ${lon})::geography",
+      " ORDER BY coordinates <-> ST_MakePoint(${lat}, ${lon})::geography",
     { lat, lon, type }
   );
 
